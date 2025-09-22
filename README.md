@@ -1,70 +1,90 @@
-# Restaurant Turnover Prediction
-
-# 🏦 AllLife Bank Personal Loan Prediction  
+# 🍴 Restaurant Annual Turnover Prediction  
 
 ## 📌 Context  
-AllLife Bank, a US-based bank, has a growing customer base. Most of its customers are **liability customers** (depositors), while only a small portion are **asset customers** (borrowers). The bank wants to expand its loan business by converting existing liability customers into personal loan customers, while retaining them as depositors.  
+India’s food scene is vast and diverse — from bustling street stalls to 5-star fine dining. For Indians, dining out is a **joyous occasion**, with restaurants being chosen for various reasons like taste, ambience, nostalgia, or popularity.  
 
-Last year’s campaign targeting liability customers achieved a **9% conversion rate**, encouraging the retail marketing department to run improved campaigns with better targeting.  
+From a **business perspective**, a restaurant’s **popularity directly impacts its annual turnover**. To survive and thrive, restaurants need strong turnover, which depends on factors such as:  
+- Location and neighbourhood  
+- Cuisine type and themes  
+- Social media popularity  
+- Ratings from platforms like Zomato  
+- Customer surveys and mystery visitor audits  
 
-As a **Data Scientist**, your task is to build a model that helps identify customers with a **high probability of accepting personal loans**.  
-
----
-
-## 🎯 Objective  
-- Predict whether a liability customer will purchase a personal loan.  
-- Understand which customer attributes influence loan purchase decisions.  
-- Identify customer segments with higher likelihood of conversion.  
-- Support the marketing department in running more effective campaigns.  
+This project aims to **predict the annual turnover** of restaurants across India using a rich dataset that combines operational details, customer insights, and external popularity indicators.  
 
 ---
 
-## 📊 Data Dictionary  
-
-The dataset includes the following customer attributes:  
-
-| Column Name        | Description |
-|--------------------|-------------|
-| `ID`              | Customer ID |
-| `Age`             | Customer’s age (in years) |
-| `Experience`      | Years of professional experience |
-| `Income`          | Annual income (in $1000s) |
-| `ZIP Code`        | Home address ZIP code |
-| `Family`          | Family size |
-| `CCAvg`           | Average monthly credit card spending (in $1000s) |
-| `Education`       | Education level → 1: Undergrad, 2: Graduate, 3: Professional |
-| `Mortgage`        | Value of house mortgage (in $1000s) |
-| `Personal_Loan`   | Target variable → 1: Accepted, 0: Not accepted |
-| `Securities_Account` | Does the customer have a securities account? (0/1) |
-| `CD_Account`      | Does the customer have a certificate of deposit (CD) account? (0/1) |
-| `Online`          | Does the customer use internet banking? (0/1) |
-| `CreditCard`      | Does the customer use a credit card from another bank? (0/1) |
+## 🎯 Goal  
+To build a machine learning model that predicts the **Annual Turnover** of restaurants based on the provided variables.  
 
 ---
 
-## 🚀 Key Tasks  
-- Perform **Exploratory Data Analysis (EDA)** to understand customer profiles.  
-- Identify significant attributes influencing personal loan purchases.  
-- Build **predictive models** (e.g., Logistic Regression, Decision Trees, Random Forest, XGBoost).  
-- Evaluate models using metrics like Accuracy, Precision, Recall, F1-score, and AUC.  
-- Provide insights and recommendations for targeted marketing.  
+## 📊 Dataset Information  
+The dataset is split into two parts:  
+
+- **Train Dataset** – Includes restaurant details and their actual turnover values.  
+- **Test Dataset** – Includes restaurant details but without turnover values. The goal is to predict these.  
+- **Data Dictionary.csv** – Provides descriptions of all variables included in the datasets.  
+
+---
+
+## 📑 Data Fields (Examples)  
+- `Registration Number` – Unique restaurant ID  
+- `Location` – Restaurant location (city/area)  
+- `Opening Date` – When the restaurant started operations  
+- `Cuisine Type` – Primary cuisine offered  
+- `Theme` – Restaurant’s theme/ambience  
+- `Social Media Popularity Index` – Popularity score from online platforms  
+- `Zomato Rating` – Average customer rating  
+- `Customer Survey Data` – Survey feedback from customers  
+- `Mystery Visitor Rating` – Independent third-party audit rating  
+- `Turnover` – **Target variable (Annual Turnover in Train dataset only)**  
+
+---
+
+## 📌 Evaluation Metric  
+The model performance will be evaluated using **RMSE (Root Mean Squared Error)**.  
+- Lower RMSE → Better predictions.  
+- Predictions in the Test dataset will be compared with actual turnover values.  
+
+---
+
+## 📂 Submission Format  
+The final submission file should be a **CSV** with:  
+- Exactly **500 rows + header row**  
+- Exactly **two columns**:  
+
+| Registration Number | Annual Turnover |
+|---------------------|-----------------|
+| R001                | 123456          |
+| R002                | 987654          |
+| ...                 | ...             |
+
+---
+
+## 🚀 Approach  
+1. Perform **EDA** to understand the factors influencing turnover.  
+2. Preprocess data (handle missing values, categorical encoding, feature scaling).  
+3. Experiment with **ML models**: Linear Regression, Random Forest, Gradient Boosting, XGBoost.  
+4. Tune hyperparameters for optimal performance.  
+5. Evaluate on **RMSE metric**.  
+6. Generate predictions on Test dataset and prepare submission file.  
 
 ---
 
 ## 🛠️ Tech Stack  
 - **Python** 🐍  
-- **Pandas / NumPy** – Data manipulation  
-- **Matplotlib / Seaborn** – Data visualization  
-- **Scikit-learn** – Machine Learning models  
-- **Jupyter Notebook** – Analysis workflow  
+- **Pandas / NumPy** – Data processing  
+- **Matplotlib / Seaborn** – Visualization  
+- **Scikit-learn / XGBoost / LightGBM** – Modeling  
+- **Jupyter Notebook** – Development  
 
 ---
 
 ## 📌 Expected Outcomes  
-- A predictive model that classifies customers as likely/unlikely to purchase a personal loan.  
-- Insights on key drivers such as **income, credit card spending, education level, and online banking usage**.  
-- Customer segmentation for effective **target marketing campaigns**.  
-- Improved success ratio beyond the previous 9% conversion rate.  
+- Predict restaurant annual turnover with minimal RMSE.  
+- Identify **key drivers** of turnover such as location, cuisine, ratings, and popularity.  
+- Provide insights for restaurant owners and investors on factors contributing to financial success.  
 
 ---
 
